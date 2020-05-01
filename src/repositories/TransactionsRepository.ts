@@ -15,7 +15,7 @@ class TransactionsRepository extends Repository<Transaction> {
 
     const balance: Balance = transactions.reduce(
       (prev, transaction) => {
-        prev[transaction.type] += transaction.value;
+        prev[transaction.type] += Number(transaction.value);
         prev.total = prev.income - prev.outcome;
 
         return prev;
